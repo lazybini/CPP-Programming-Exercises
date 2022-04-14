@@ -14,7 +14,7 @@ void loadRanking(char* fname) {
 			initRanking();
 		else {
 			for (int i = 0; i < nMVP; i++)
-				fscanf_s(fp, "%d%s%lf", &MVP[i].nMove,
+				fscanf(fp, "%d%s%lf", &MVP[i].nMove,
 					MVP[i].name, &MVP[i].tElapsed);
 			fclose(fp);
 		}
@@ -29,7 +29,7 @@ void storeRanking(char* fname) {
 }
 void printRanking() {
 	for (int i = 0; i<nMVP; i++)
-		printf(" [%2d위] %4d %-16s %5.1f/n", i+1, MVP[i].nMove,
+		printf(" [%2d위] %4d %-16s %5.1f\n", i + 1, MVP[i].nMove,
 			MVP[i].name, MVP[i].tElapsed);
 }
 int addRanking(int nMove, double tElap) {
