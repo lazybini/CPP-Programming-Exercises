@@ -6,4 +6,4 @@
 #include <memory.h>
 #include <time.h>
 #include <ctype.h>
-extern void playMineSweeper( int nBomb = 13 );
+extern void playMineSweeper(int nBomb = 13);
