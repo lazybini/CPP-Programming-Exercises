@@ -1,48 +1,52 @@
 #include "Ranking.h"
+#include <stdio.h>
 #define NUM_MVP 5
-static PlayInfo MVP[NUM_MVP];	// ë­í‚¹ ë°°ì—´
-static int nMVP = NUM_MVP;		// ë­í‚¹ ë°°ì—´ì˜ ê¸¸ì´
+
+static PlayInfo MVP[NUM_MVP];	// ·©Å· ¹è¿­
+static int nMVP = NUM_MVP;		// ·©Å· ¹è¿­ÀÇ ±æÀÌ
 
 static void initRanking() {
-	PlayInfo noname = { "C++ì¢‹ì•„ìš”", 1000, 1000.0 };
-	for (int i = 0; i<nMVP; i++)
+	PlayInfo noname = { "C++ÁÁ¾Æ¿ä", 1000, 1000.0 };
+	for (int i = 0; i < nMVP; i++)
 		MVP[i] = noname;
 }
-void loadRanking(char* fname) {
-	FILE* fp = fopen(fname,"r");
-		if (fp == NULL)
-			initRanking();
-		else {
-			for (int i = 0; i < nMVP; i++)
-				fscanf(fp, "%d%s%lf", &MVP[i].nMove,
-					MVP[i].name, &MVP[i].tElapsed);
-			fclose(fp);
-		}
+void loadRanking(const char* fname) {
+	FILE* fp;
+	fopen_s(&fp, fname, "r");
+	if (fp == NULL)
+		initRanking();
+	else {
+		for (int i = 0; i < nMVP; i++)
+			fscanf_s(fp, "%d%s%lf", &MVP[i].nMove,
+				MVP[i].name, &MVP[i].tElapsed);
+		fclose(fp);
+	}
 }
-void storeRanking(char* fname) {
-	FILE* fp = fopen(fname, "w");
+void storeRanking(const char* fname) {
+	FILE* fp;
+	fopen_s(&fp, fname, "w");
 	if (fp == NULL) return;
 	for (int i = 0; i < nMVP; i++)
-		fprintf(fp, "%4d %-16s %-5.1f\n", MVP[i].nMove,
+		fprintf(fp, "  %4d  %-16s %-5.1f\n", MVP[i].nMove,
 			MVP[i].name, MVP[i].tElapsed);
-		fclose(fp);
+	fclose(fp);
 }
 void printRanking() {
-	for (int i = 0; i<nMVP; i++)
-		printf(" [%2dìœ„] %4d %-16s %5.1f\n", i + 1, MVP[i].nMove,
+	for (int i = 0; i < nMVP; i++)
+		printf("  [%2dÀ§]  %4d  %-16s %5.1f\n", i + 1, MVP[i].nMove,
 			MVP[i].name, MVP[i].tElapsed);
 }
 int addRanking(int nMove, double tElap) {
 	if (nMove < MVP[nMVP - 1].nMove) {
 		int pos = nMVP - 1;
-		for (; pos>0; pos--) {
+		for (; pos > 0; pos--) {
 			if (nMove >= MVP[pos - 1].nMove) break;
 			MVP[pos] = MVP[pos - 1];
 		}
 		MVP[pos].nMove = nMove;
 		MVP[pos].tElapsed = tElap;
-		printf(" %dìœ„ì…ë‹ˆë‹¤. ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” : ", pos + 1);
-		scanf("%s", MVP[pos].name);
+		printf(" %dÀ§ÀÔ´Ï´Ù. ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä: ", pos + 1);
+		scanf_s("%s", MVP[pos].name);
 		return pos + 1;
 	}
 	return 0;
