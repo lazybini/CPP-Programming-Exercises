@@ -268,7 +268,7 @@ void RestartSaveGame(char* filename)
 	fscanf_s(rp, "%d", &_y);
 	fclose(rp);
 }
-int play3x3Puzzle()
+int play5x5Puzzle()
 {
 	printf("\n 이전 게임을 이어서 하겠습니까?( yes==>1, no==>0) :");
 	scanf_s("%d", &flag);
