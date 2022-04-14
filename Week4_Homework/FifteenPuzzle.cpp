@@ -1,5 +1,5 @@
 #include "Ranking.h"
-#include <Windows.h>		// Sleep() 함수를 위해 포함
+#include <windows.h>		// Sleep() 함수를 위해 포함
 #include <stdlib.h>
 #include <conio.h>
 #include <string.h>
@@ -24,8 +24,8 @@ static void init() {
 	nMove = 0;
 }
 static void display() {
-	system("clc");
-	printf("\nFifteen Puzzle\n\t");
+	system("cls");
+	printf("\tFifteen Puzzle\n\t");
 	printf("--------------\n\t");
 	for (int r = 0; r < DIM; r++) {
 		for (int c = 0; c < DIM; c++) {
@@ -45,7 +45,7 @@ static bool move(int dir) {
 		map[y][x] = map[y][x - 1];
 		map[y][--x] = 0;
 	}
-	else if (dir == Up && y < DIM - 1) {	// <- : 맨 오른쪽 열인지 검사
+	else if (dir == Left && y < DIM - 1) {	// <- : 맨 오른쪽 열인지 검사
 		map[y][x] = map[y][x + 1];
 		map[y][++x] = 0;
 	}
@@ -64,7 +64,7 @@ static bool move(int dir) {
 }
 static void shuffle(int nShuffle) {
 	for (int i = 0; i < nShuffle; i++) {
-		int key = DirKey[rand() % 4];
+		int key = DirKey[rand()%4];
 		if (move(key) == false) { i--; continue; }
 		display();
 		Sleep(50);
@@ -79,16 +79,16 @@ static bool isDone() {
 	}
 	return true;
 }
-static int getDirKey() { return _getche() == 224 ? _getche() : 0; }
+static int getDirKey() { return getche() == 224 ? getche() : 0; }
 int playFifteenPuzzle() {
 	init();
 	display();
 	printRanking();
 	printf("\n 퍼즐을 섞어주세요(엔터)...");
-	_getche();
+	getche();
 	shuffle(100);						// 퍼즐 조각을 100번 이동해 섞음
 	printf("\n 게임이 시작됩니다...");
-	_getche();
+	getche();
 
 	nMove = 0;							// 이동 횟수 초기화
 	tStart = clock();					// 기준 시각을 재설정
