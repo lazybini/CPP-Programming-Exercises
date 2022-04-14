@@ -1,9 +1,9 @@
 #include "Ranking.h"
-extern int playEightPuzzle();
+extern int play3x3Puzzle();
 void main()
 {
 	loadRanking("ranking.txt");
-	int rank = playEightPuzzle();
+	int rank = play3x3Puzzle();
 	printRanking();
 	storeRanking("ranking.txt");
 }
