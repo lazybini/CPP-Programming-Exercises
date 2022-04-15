@@ -1,13 +1,15 @@
 #pragma once
 #include <cstdio>
-struct Complex {
+class Complex		// µ¥ÀÌÅÍ ¸â¹ö. ¸ðµÎ privateÀ¸·Î ¼±¾ðµÊ
+{
 	double real;
 	double imag;
+public:
+	void setComplex(double r, double i) {		// inlindÀ¸·Î ±¸Çöµµ´Ï ¸â¹ö ÇÔ¼ö. ¸Å°³º¯¼ö°¡ ÇÏ³ª ÁÙ°í, ÄÚµåµµ ´Ü¼øÇØÁü
+		real = r;
+		imag = i;
+	}
+	void readComplex(char* msg = " º¹¼Ò¼ö = ");	// ¸â¹ö ÇÔ¼öµé
+	void printComplex(char* msg = "º¹¼Ò¼ö = ");
+	void addComplex(Complex a, Complex b);
 };
-inline void setComplex(Complex &c, double r, double i) {
-	c.real = r;
-	c.imag = i;
-};
-extern Complex readComplex(const char* msg = "ÂºÂ¹Â¼Ã’Â¼Ã¶ =");
-extern void printComplex(Complex c,const char* msg = "ÂºÂ¹Â¼Ã’Â¼Ã¶ =");
-extern Complex addComplex(Complex a, Complex b);
