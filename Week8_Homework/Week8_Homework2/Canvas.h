@@ -5,8 +5,8 @@
 using namespace std;
 
 class Canvas {
-	string line[MAXLINES];	// È­¸é Ãâ·ÂÀ» À§ÇÑ ¹®ÀÚ¿­
-	int xMax, yMax;		// ¸ÊÀÇ Å©±â
+	string line[MAXLINES];	// í™”ë©´ ì¶œë ¥ì„ ìœ„í•œ ë¬¸ìì—´
+	int xMax, yMax;		// ë§µì˜ í¬ê¸°
 public:
 	Canvas(int nx = 10, int ny = 10) : xMax(nx), yMax(ny) {
 		for (int y = 0; y < yMax; y++)
@@ -16,7 +16,7 @@ public:
 		if (x >= 0 && y >= 0 && x < xMax && y < yMax)
 			line[y].replace(x * 2, 2, val);
 	}
-	void clear(string val = ". ") {		// µğÆúÆ® ¸Å°³º¯¼ö: °ø¹é 2°³
+	void clear(string val = ". ") {		// ë””í´íŠ¸ ë§¤ê°œë³€ìˆ˜: ê³µë°± 2ê°œ
 		for (int y = 0; y < yMax; y++)
 			for (int x = 0; x < xMax; x++)
 				draw(x, y, val);
