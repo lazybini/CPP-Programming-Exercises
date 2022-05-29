@@ -19,9 +19,9 @@ CPP-Programming-Exercises
 | 7주차 | ✅ | ✅ | 1️⃣기본 과제 : 7.8 응용: MonsterWorld 게임 | 2️⃣심화 과제 : 348페이지 실습문제 3번 구현 |
 | 8주차 | ✅ | ✅ | 1️⃣기본 과제 : 8.8 응용: MonsterWorld V2 | 2️⃣심화 과제 : 399페이지 실습문제 3번 구현 |
 | 9주차 | ✅ | ✅ | 1️⃣기본 과제 : 9.7 응용: MonsterWorld V3 | 2️⃣심화 과제 : 446페이지 실습문제 2번 구현 |
-| 10주차 | ⬛ | ⬛ | 1️⃣기본 과제 : 10.7 응용: MonsterWorld V4 | 3️⃣심화 과제 : 488페이지 실습문제 1번 구현 |
-|  | ⬛ |  | 2️⃣기본 과제 : 10.9 응용: MonsterWorld V5 |  |
-| 11주차 | ⬛ | ⬛ | 1️⃣기본 과제 :  | 2️⃣심화 과제 :  |
-| 12주차 | ⬛ | ⬛ | 1️⃣기본 과제 :  | 2️⃣심화 과제 :  |
+| 10주차 | ✅ | ✅ | 1️⃣기본 과제 : 10.7 응용: MonsterWorld V4 | 3️⃣심화 과제 : 488페이지 실습문제 1번 구현 |
+|  | ✅ |  | 2️⃣기본 과제 : 10.9 응용: MonsterWorld V5 |  |
+| 11주차 | ⬛ | ⬛ | 1️⃣기본 과제 : 11. 응용: MonsterWorld V6 | 2️⃣심화 과제 : 533페이지 실습문제 1번 구현 |
+|  | ⬛ |  | 2️⃣기본 과제 : 12. 응용: MonsterWorld 7 |  |
 
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Flazybini%2FCPP-Programming-Exercises&count_bg=%23F17AB8&title_bg=%23BC849E&icon=&icon_color=%23EDE9E9&title=hits&edge_flat=false"/></a>
