@@ -1,4 +1,4 @@
-/* p533 11Àå ½Ç½À¹®Á¦ 1 */
+/* p533 11ìž¥ ì‹¤ìŠµë¬¸ì œ 1 */
 #pragma once
 #include <iostream>
 #include <iomanip>
@@ -62,16 +62,16 @@ public:
 		else return -1;
 	}
 
-	// (7) ÃÊ´ÜÀ§ º¯°æ
+	// (7) ì´ˆë‹¨ìœ„ ë³€ê²½
 	operator int() {
 		return totalsec();
 	}
-	// (8) ½Ã´ÜÀ§ º¯°æ
+	// (8) ì‹œë‹¨ìœ„ ë³€ê²½
 	operator double() {
 		return totalsec() / 3600.;
 	}
 
-	// (9) Á¤¼ö * ½Ã°£
+	// (9) ì •ìˆ˜ * ì‹œê°„
 	friend TimeHMS operator*(int times, TimeHMS t) {
 		return TimeHMS(times * t.totalsec());
 	}
