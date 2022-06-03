@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Point.h"			// Point »ç¿ëÀ» À§ÇØ Ãß°¡
+#include "Point.h"			// Point ì‚¬ìš©ì„ ìœ„í•´ ì¶”ê°€
 #define MAXLINES 100
 using namespace std;
 
@@ -18,7 +18,7 @@ public:
 			line[y].replace(x * 2, 2, val);
 	}
 
-	// ´ÙÀ½ ÇÔ¼ö Ãß°¡
+	// ë‹¤ìŒ í•¨ìˆ˜ ì¶”ê°€
 	void draw(Point& p, string val) { draw(p.x, p.y, val); }
 
 	void clear(string val = ". ") {		
